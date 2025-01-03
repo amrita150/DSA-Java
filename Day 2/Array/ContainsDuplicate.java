@@ -28,7 +28,7 @@ public class ContainsDuplicate {
             res.add(num);
         }
         return false;
-    }
+    } //time and space complexity is O(n)
 
     public static void main(String[] args) {
         int arr[] = {3,2,1,8,1};
