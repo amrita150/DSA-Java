@@ -30,6 +30,9 @@ public class LeftRotateByDPlace {
     }
 
     public static void leftRotateByDPlace(int arr[], int pos){
+           while(pos>arr.length-1){
+            pos = pos - arr.length;
+           }
             reverse(arr, 0 , pos-1);
             reverse(arr, pos , arr.length-1);
             reverse(arr, 0, arr.length-1);
