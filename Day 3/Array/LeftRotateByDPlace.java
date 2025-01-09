@@ -54,6 +54,6 @@ public class LeftRotateByDPlace {
         leftRotateByDPlace(arr1,k);
         System.out.println("\nOptimized solution: ");
         printArray(arr1);
+        sc.close();
     }    
-
 }
