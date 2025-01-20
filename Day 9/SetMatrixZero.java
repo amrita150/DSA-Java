@@ -60,15 +60,6 @@ class SetMatrixZero {
         }
     } //Time: O(mn), Space: O(m+n)
 
-    
-    public static void printMatrix(int matrix[][], int row, int col){
-        for(int i =0; i<row;i++){
-            for(int j =0; j<col; j++){
-                System.out.print(matrix[i][j] + " ");
-            }
-            System.out.println();
-        }
-    }
     /****************************** optimal approach ******************************************/ 
     //we can use the 0th row and 0th column of the given matrix itself instead of using two separate arrays
 
@@ -134,7 +125,17 @@ class SetMatrixZero {
                 matrix[j][0] = 0;
             }
         }
+    }//Time: O(mn), Space: O(1)
+
+    public static void printMatrix(int matrix[][], int row, int col){
+        for(int i =0; i<row;i++){
+            for(int j =0; j<col; j++){
+                System.out.print(matrix[i][j] + " ");
+            }
+            System.out.println();
+        }
     }
+
     public static void main(String[] args) {
         int[][] matrix = {
             {1, 1, 2, 3},
