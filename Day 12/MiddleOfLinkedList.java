@@ -1,38 +1,36 @@
-class Node{
+class Node {
     int data;
     Node next;
-    Node prev;
 
-    public Node(int data){
+    public Node(int data) {
         this.data = data;
         this.next = null;
-        this.prev = null;
     }
 }
 
 public class MiddleOfLinkedList {
     public static Node head;
 
-    //brute force approach
+    // Brute Force Approach (Two-Pass)
     public static Node findMiddle(Node head) {
         int count = 0;
         Node temp = head;
-        while(temp!=null){
-            temp = temp.next;
-            count++;
-        }
-        int loc = (count/2);
-        temp = head;
-        for(int i=0; i<loc;i++){
-            temp = temp.next;
-        }
-        head = temp;
-        return head;
-    } // time complexity is O(n), but the problem is we solved this in double pass not in a single pass
 
-    //optimized approach
-    //in thi swe use two pointer approach, by using fast and slow pointer
-    public static Node middleOfLL(Node head){
+        while (temp != null) { // Count the number of nodes
+            count++;
+            temp = temp.next;
+        }
+
+        temp = head;
+        for (int i = 0; i < count / 2; i++) { // Move to the middle
+            temp = temp.next;
+        }
+
+        return temp; // Middle node
+    }
+
+    // Optimized Two-Pointer Approach (Single Pass)
+    public static Node middleOfLL(Node head) {
         Node slow = head;
         Node fast = head;
 
@@ -41,20 +39,24 @@ public class MiddleOfLinkedList {
             fast = fast.next.next;
         }
 
-        return slow;
-    }//time complexity = O(n), in single pass
+        return slow; // Middle node
+    }
 
-    public static void displayNode(Node head){
-        if(head==null){
+    // Display Linked List
+    public static void displayNode(Node head) {
+        if (head == null) {
             System.out.println("List is empty");
             return;
         }
         Node temp = head;
-        while(temp.next != null){
-            System.out.print(temp.data + "<->");
+        while (temp != null) {
+            System.out.print(temp.data);
+            if (temp.next != null) {
+                System.out.print(" -> ");
+            }
             temp = temp.next;
         }
-        System.out.print(temp.data);
+        System.out.println();
     }
 
     public static void main(String[] args) {
@@ -63,14 +65,12 @@ public class MiddleOfLinkedList {
         head.next.next = new Node(7);
         head.next.next.next = new Node(6);
         head.next.next.next.next = new Node(9);
-        System.out.println("Original List is: ");
+
+        System.out.println("Original List:");
         displayNode(head);
-        Node middle = middleOfLL(head);
-        System.err.println("\nMiddle of LL is: ");
+
+        Node middle = middleOfLL(head); // Optimized approach
+        System.out.println("\nMiddle of LL:");
         displayNode(middle);
     }
 }
-
-
-
-
