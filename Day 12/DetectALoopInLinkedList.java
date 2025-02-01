@@ -8,7 +8,7 @@ class Node {
     }
 }
 
-public class DetectALinkedList {
+public class DetectALoopInLinkedList {
     public static Node head;
 
     public static boolean hasCycle(Node head) {
@@ -21,23 +21,6 @@ public class DetectALinkedList {
             }
         }
         return false;
-    }
-
-    // Display Linked List
-    public static void displayNode(Node head) {
-        if (head == null) {
-            System.out.println("List is empty");
-            return;
-        }
-        Node temp = head;
-        while (temp != null) {
-            System.out.print(temp.data);
-            if (temp.next != null) {
-                System.out.print(" -> ");
-            }
-            temp = temp.next;
-        }
-        System.out.println();
     }
 
     public static void main(String[] args) {
