@@ -20,7 +20,7 @@ class Stack{
     }
 }
 
-public class StackBasic {
+public class StackUsingArray {
     public static void main(String[] args) {
         Stack s = new Stack();
         s.push(4);
