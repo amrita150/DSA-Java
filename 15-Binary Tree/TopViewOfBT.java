@@ -10,7 +10,6 @@ class Node{
         this.right = null;
     }
 }
-
 class Info {
     int hd; 
     Node node;
