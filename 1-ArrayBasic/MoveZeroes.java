@@ -18,20 +18,29 @@ public class MoveZeroes {
     //optimized approach, using two pointer and swapping
     
     public static void moveZeroesToEnd(int arr[]){
-        int i = 0;
-        int j = arr.length -1;
-        while(i<j){
+        int j = -1;
+        //point j to the place where element is zero
+        for(int i =0; i<arr.length;i++){
             if(arr[i]==0){
-                int temp = arr[i];
-                arr[i] = arr[j];
-                arr[j] = temp;
-                j--;
-            } else{
-                i++;
+                j=i;
+                break;
             }
         }
 
-       
+        //check if array contain any zeroes or not
+        if(j == -1){
+            return;
+        }
+
+        //do swapping
+        for(int i = j+1; i<arr.length ; i++){
+            if(arr[i]!=0){
+                int temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+                j++;
+            }
+        }
 
         printArray(arr);
     }
