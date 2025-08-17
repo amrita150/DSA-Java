@@ -1,4 +1,4 @@
-import java.util.*;
+import java.util.Stack;
 
 public class NextSmallerElement {
     public static int[] nextSmaller(int arr[]){
