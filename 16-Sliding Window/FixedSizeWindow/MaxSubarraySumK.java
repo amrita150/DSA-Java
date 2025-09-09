@@ -1,3 +1,4 @@
+package FixedSizeWindow;
 public class MaxSubarraySumK {
     public static int maximumSumSubarray(int[] arr, int k) {
         int n = arr.length;

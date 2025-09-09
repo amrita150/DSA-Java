@@ -1,3 +1,4 @@
+package FixedSizeWindow;
 import java.util.*;
 public class FirstNegativeInWindow {
      static List<Integer> firstNegInt(int arr[], int k) {
